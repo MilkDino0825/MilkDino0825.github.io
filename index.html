@@ -1,8 +1,92 @@
+<!DOCTYPE html>
 <html>
-  <title>
-    MilkDino0825
-  </title>
-  <body>
-    <h1>MilkDino0825 입니다!</h1>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>디노의 메인 페이지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    h1, h2 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .right {
+      margin-top:20px;
+      padding-right:20px;
+      font-size:10px;
+    }
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      transition: background-color 0.3s ease;
+    }
+    a:hover {
+      background-color: #e1e1e1;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #clock {
+      font-size: 24px;
+      text-align: right;
+    }
+    #countdown {
+      display: block;
+      font-size: 25px;
+      text-align: center;
+    }
+    #countdown2 {
+      display: block;
+      font-size: 25px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>디노의 페이지</h1>
+    <p class="right">[ 1.0.0 ]</p>
+    <h2>제 12회 팜콘 "마을"</h2>
+    <div id=countdown></div>
+    <a href="PageInformation.html">페이지 설명</a>
+    <a href="Update.html">패치노트</a>
+    <h2>프로젝트1</h2>
+    <a href="NoobGuide.html">뉴비 가이드</a>
+    <div id="clock"></div>
+  </div>
+</body>
+<script>
+    function updateClock() {
+      const now = new Date();
+      const Fullyear = String(now.getFullYear()).padStart(2, '0');
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const date = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const timeString = `${Fullyear}.${month}.${date} | ${hours}:${minutes}:${seconds}`;
+
+      document.getElementById('clock').textContent = timeString;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+</script>
+<script src="cd.js"></script>
 </html>
