@@ -1,4 +1,4 @@
-const dday = new Date("2023-11-8T23:59:59");
+const dday = new Date("2023-11-08T23:59:59");
     
     function Countdown() {
       const n = new Date();
